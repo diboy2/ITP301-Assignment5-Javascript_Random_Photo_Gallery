@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Family Vacations</title>
+  <style>
+  	#container {
+  		width:	700px;
+  		margin:	auto;
+      text-align: center;
+      border: 1px solid black;
+  	}
+  	#caption {
+  		font-size:	14pt;
+  		margin:			10px;
+  	}
+    
+
+    #main{
+      width:600px;
+      margin: auto;
+    }
+
+  </style>
+
+	<script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+
+ </head>
+ <body>
+  <div id="container">
+
+  	<div id="main">
+      <br>
+      <button onclick = "changeImage();">
+      Change Picture
+      </button>
+      
+      <br>
+      <br>
+  		<img id="main-img">
+      <br>
+  		<div id="caption">
+      </div>
+  	</div>
+    <br>
+  </div>
+ </body>
+ <script>
+    var imageNames = ["disneyworld.jpg","eiffel_tower.jpg", "great_wall_of_china.jpg", "hawaii.jpg", "las_vegas.jpg",
+    "new_york.jpg", "philippines.jpg", "pyramid.jpg", "taj_mahal.jpg", "yellowstone.jpg"];
+    var imageCaptions = ["Disneyworld", "Eiffel Tower", "Great Wall Of China", "Hawaii", "Las Vegas",
+    "New York", "Philippines", "Pyramid", "Taj Mahal", "Yellowstone"];
+    var imageHeights = ["50px", "100px", "73px", "182px", "90px", 
+    "132px", "152px", "256px", "245px", "25px"];
+
+    function changeImage(){
+      var randNum = Math.floor(Math.random()*10);
+      document.getElementById("main-img").src = "images/" + imageNames[randNum];
+      document.getElementById("caption").innerHTML = imageCaptions[randNum];
+      document.getElementById("main-img").style.height = imageHeights[randNum];
+    }
+
+    changeImage();
+  </script>
+</html>
